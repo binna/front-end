@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>대화상자</title>
+</head>
+<body>
+    <h2>대화상자</h2>
+    <script>
+        "use strict";
+        //window.alert('안녕하세요. JavaScript!');    // window는 생략 가능
+
+        //let result = window.confirm('확인 또는 취소를 눌러주세요.');
+        //console.log(result);
+
+        //let name = window.prompt('이름을 입력하세요.');
+        //console.log(name);
+
+        let num1 = window.prompt('첫번째 숫자를 입력하세요.');
+        let num2 = window.prompt('두번째 숫자를 입력하세요.');
+        //console.log(num1 + num2);   // 문자열로 반환되기 때문에 연산이 아닌 연결이 됨
+        console.log(Number(num1) + Number(num2));   // number로 변환 후 더해야 연산이 됨
+    </script>
+</body>
+</html>

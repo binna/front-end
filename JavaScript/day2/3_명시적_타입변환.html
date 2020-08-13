@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>명시적 타입 변환</title>
+</head>
+<body>
+    <h2>명시적 타입 변환</h2>
+    <script>
+        "use strict";
+        let num1 = "10";
+        let num2 = "5";
+        console.log("현재 num1의 타입 : " + (typeof num1));
+        console.log("num1 + num2 : " + (num1 + num2));
+        
+        console.log("Number(num1) + Number(num2) : " + (Number(num1) + Number(num2)));
+        console.log(Number(num1 + num2));   // (x)
+                                            // : 왜냐하면 문자열 결합 후 Number 타입으로 변환되기 때문에
+    </script>
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>묵시적 타입 변환</title>
+</head>
+<body>
+    <h2>묵시적 타입 변환</h2>
+    <script>
+        "use strict";
+        let a = 10 + '문자열';
+        console.log(a);
+
+        let b = 3 * 5;          // 자동으로 형변환되어 계산이 잘 된다.
+        console.log(b);
+
+        let c = 1 - '문자열';   // NaN(Not a Number) 출력
+        console.log(c);
+
+        let d = "10" - "20";
+        console.log(d);
+    </script>
+</body>
+</html>
