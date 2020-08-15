@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>homework</title>
+</head>
+<body>
+    <h2>숙제</h2>
+    <script>
+        "use strict";
+        let name = prompt('이름을 입력하세요');
+        let HTMLScore = Number(prompt('HTML 점수를 입력하세요.'));
+        let CSSScore = Number(prompt('CSS 점수를 입력하세요.'));
+        let JavaScriptScore = Number(prompt('JavaScript 점수를 입력하세요.'));
+
+        let sum = HTMLScore + CSSScore + JavaScriptScore;
+        let avg = parseFloat(sum / 3.0);
+
+        console.log(name + '님의 성적\n');
+        console.log("HTML : " + HTMLScore + '점\n');
+        console.log("CSS : " + CSSScore+ '점\n');
+        console.log("JavaScript : " + JavaScriptScore+ '점\n');
+        console.log("총점 : " + sum + '점\n');
+        console.log("평균 : " + avg.toFixed(2) + '점\n');
+    </script>
+</body>
+</html>
