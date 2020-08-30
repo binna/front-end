@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>학생성적 프로그램2</title>
+</head>
+<body>
+    <h2>학생성적 프로그램2</h2>
+    <script>
+        "use strict";
+        const name = prompt("이름을 입력하세요.");
+        const kor = Number(prompt("국어점수를 입력하세요."));
+        const eng = Number(prompt("영어점수를 입력하세요."));
+        const math = Number(prompt("수학점수를 입력하세요."));
+        const total = kor + eng + math;
+        const avg = total / 3;
+        let hak = "";
+
+        if(avg >= 90){
+            hak = "A학점";
+        }else if(avg >= 80){
+            hak = "B학점";
+        }else if(avg >= 70){
+            hak = "C학점";
+        }else if(avg >= 60){
+            hak = "D학점";
+        }else{
+            hak = "F학점";
+        }
+
+        document.write(`${name}님 성적표<br>`);
+        // document.write(name + '님 성적표<br>');
+        document.write(`국어점수 : ${kor}점<br>`);
+        document.write(`영어점수 : ${eng}점<br>`);
+        document.write(`수학점수 : ${math}점<br>`);
+        document.write(`총점 : ${total}점<br>`);
+        document.write(`평균 : ${avg}점<br>`);
+        document.write(`학점 : ${hak}`);
+    </script>
+</body>
+</html>
