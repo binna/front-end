@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>while문 - 2</title>
+</head>
+<body>
+    <h2>while문 - 2</h2>
+    <script>
+        'use strict';
+
+        let i = 1, sum = 0;
+        while(i <= 10) {
+            sum += i;
+            /*
+                sum = sum + i;
+                1번째 : sum = 0 + 1; -> sum = 1;
+                2번째 : sum = 1 + 2; -> sum = 3;
+                3번째 : sum = 3 + 3; -> sum = 6;
+                4번째 : sum = 6 + 4; -> sum = 10;
+                5번째 : sum = 10 + 5; -> sum = 15;
+                6번째 : sum = 15 + 6; -> sum = 21;
+                7번째 : sum = 21 + 7; -> sum = 28;
+                8번째 : sum = 28 + 8; -> sum = 36;
+                9번째 : sum = 36 + 9; -> sum = 45;
+                10번째 : sum = 45 + 10; -> sum = 55;
+            */
+            i++;
+        }
+        console.log(`1부터 10까지의 총합 : ${sum}`);
+    </script>
+</body>
+</html>
