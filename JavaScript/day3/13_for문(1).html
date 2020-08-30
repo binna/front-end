@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>for문 - 1</title>
+</head>
+<body>
+    <h2>for문 - 1</h2>
+    <script>
+        'use strict';
+        //for(let i = 1; i <= 5; i++) {
+        //    console.log(`${i}번째 반복`);
+        //}
+        //console.log(i); // Uncaught ReferenceError: i is not defined
+                        // 왜? 변수 i는 for문에서만 유효한 지역변수이기 때문에
+                        // 만약 여기서도 값을 출력하고 싶다면 for문 밖에서 선언해줘야 함
+
+        let i;
+        for(i = 1; i <= 5; i++) {
+            console.log(`${i}번째 반복`);
+        }
+        console.log(`현재 i의 값은 : ${i}`);
+    </script>
+</body>
+</html>
