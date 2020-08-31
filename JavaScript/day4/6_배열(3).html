@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>배열 - 3</title>
+</head>
+<body>
+    <h2>배열 - 3</h2>
+    <script>
+        "use strict";
+        const cnt = Number(prompt('입력받을 숫자의 갯수를 입력하세요.'));   // 입력 : 5
+        let num = 0;
+        let arr = [];
+
+        while(num < cnt) {
+            // 숫자 입력 받기
+            arr[num] = Number(prompt(`${num + 1}번째 숫자를 입력하세요.`));
+            num++;
+        }
+
+        // 입력받은 숫자 토대로 배열이 만들어짐
+        // arr = [40, 70, 50, 100, 30];
+        let max = arr[0];
+        let min = arr[0];
+
+        for(let i = 1; i < arr.length; i++) {
+            // 최대값 구하기
+            if(max < arr[i]) {  // if(40 < 70) -> if(70 < 50) -> if(70 < 100), if(100 < 30)
+                max = arr[i];   // max = 70;, max = 100;
+            }
+
+            // 최소값 구하기
+            if(min > arr[i]) {  // if(40 > 70) -> if(40 > 50) -> if(40 > 100), if(40 > 30)
+                min = arr[i];   // min = 30;
+            }
+        }
+
+        // 출력
+        console.log(`입력한 수 ${arr} 에서 가장 큰 값은 ${max}입니다.`);
+        console.log(`입력한 수 ${arr} 에서 가장 작은 값은 ${min}입니다.`);
+    </script>
+</body>
+</html>
