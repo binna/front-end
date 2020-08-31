@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>중첩 for문 - 1</title>
+</head>
+<body>
+    <h2>중첩 for문 - 1</h2>
+    <script>
+        'use strict';
+        for(let i = 1; i <= 3; i++) {
+            console.log(`현재 i의 값은 : ${i}`);
+            for(let j = 1; j <= 5; j++) {
+                console.log(`-----> 현재 j의 값은 : ${j}`);
+            }
+        }
+        for(let i=1; i<=3; i++) { 
+            for(let j=1; j<=5; j++) { 
+                console.log('안녕하세요. JavaScript!'); 
+            } 
+        }
+    </script>
+</body>
+</html>
