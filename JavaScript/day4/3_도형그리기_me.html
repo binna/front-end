@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>도형그리기</title>
+</head>
+<body>
+    <h2>도형그리기</h2>
+    <script>
+        "use strict";
+        /*  첫 번째 문제  
+            ★★★★★
+            ★★★★★
+            ★★★★★
+            ★★★★★
+            ★★★★★
+        */
+        document.write('<p>1번째 문제</p>');
+        for(let i = 0; i < 5; i++) {
+            for(let j = 0; j < 5; j++) {
+                document.write('★ ');
+            }
+            document.write('<br>');
+        }
+
+        /*  두 번째 문제
+            ★★★★★
+            ★★★★
+            ★★★
+            ★★
+            ★
+        */
+        document.write('<p>2번째 문제</p>');
+        for(let i = 0; i <= 5; i++) {
+            for(let j = 0; j < 5 - i; j++) {
+                document.write('★ ');
+            }
+            document.write('<br>');
+        }
+
+        /*  세 번째 문제
+            ★
+            ★★
+            ★★★
+            ★★★★
+            ★★★★★
+        */
+        document.write('<p>3번째 문제</p>');
+        for(let i = 1; i <= 5; i++) {
+            for(let j = 1; j <= i; j++) {
+                document.write('★');
+            }
+            document.write('<br>');
+        }
+    </script>
+</body>
+</html>
