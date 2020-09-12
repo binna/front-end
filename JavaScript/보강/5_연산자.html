@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>연산자</title>
+</head>
+<body>
+    <h2>연산자</h2>
+    <script>
+        'use strict';
+        const num1 = Number(prompt('첫번째 숫자를 입력하세요.'));
+        const num2 = Number(prompt('두번째 숫자를 입력하세요.'));
+
+        console.log('입력받은 첫번째 숫자 : ' + num1);
+        console.log("입력받은 첫번째 숫자 : " + num2);
+
+        // ECMA6부터 새로 추가된 출력 방법 : ``
+        console.log(`${num1} + ${num2} = ${num1 + num2}`);
+        console.log(`${num1} - ${num2} = ${num1 - num2}`);
+        console.log(`${num1} * ${num2} = ${num1 * num2}`);
+        console.log(`${num1} / ${num2} = ${num1 / num2}`);
+        console.log(`${num1} % ${num2} = ${num1 % num2}`);
+        console.log(`${num1} ** ${num2} = ${num1 ** num2}`);
+
+        console.log(`${num1} > ${num2} : ${num1 > num2}`);
+        console.log(`${num1} < ${num2} : ${num1 < num2}`);
+        console.log(`${num1} >= ${num2} : ${num1 >= num2}`);
+        console.log(`${num1} <= ${num2} : ${num1 <= num2}`);
+        console.log(`${num1} == ${num2} : ${num1 == num2}`);    // "10" == 10 : true
+        console.log(`${num1} === ${num2} : ${num1 === num2}`);  // "10" === 10 : false
+        console.log(`${num1} != ${num2} : ${num1 != num2}`);
+        console.log(`${num1} !== ${num2} : ${num1 !== num2}`);
+    </script>
+</body>
+</html>

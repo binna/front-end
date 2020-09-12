@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>변수와 상수</title>
+</head>
+<body>
+    <h2>변수와 상수</h2>
+    <script>
+        "use strict"
+        let num;        // 변수의 선언
+        num = 10;       // 변수의 초기화
+        console.log(num);
+        num = 20;
+        console.log(num);
+
+        // "use strict"를 사용하는 순간
+        // 선언되지 않은 변수 num2는 사용할 수 없음
+        //num2 = 50;    // 에러
+        //console.log(num2);
+
+        // Uncaught SyntaxError: Missing initializer in const declaration
+        //const str;    // 에러
+        //str = '안녕하세요. JavaScript!';
+
+        // 변수의 선언 및 초기화
+        let num3 = 30;
+        let num4 = 50, num5 = 100;
+
+        // 상수는 선언과 동시에 초기화해줘야 에러가 발생하지 않음
+        const str = "안녕하세요. JavaScript!";
+        console.log(str);
+
+        // 자바스크립트에서는 값을 변경할 일이 없다면 메모리 효율면에서는 상수로 선언하는 것이 좋다.
+        // Why? 변수가 heap에 값을 넣고 그 값을 넣은 주소를 stack에 저장한다.
+        // 값을 변경하면 heap의 값이 변경된다고 생각할 수 있으나 변경되는 것이 아니라 버리고 heap에 변경한 값을 새롭게 만든다...!!
+        // 변경한 값으로 새롭게 만든 것을 stack에 새롭게 저장하는 식으로 메모리가 사용된다.
+        // 이 때, 버려진 메모리는 메모리 낭비가 발생한다...!
+    </script>
+</body>
+</html>
