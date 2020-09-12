@@ -31,6 +31,24 @@
         console.log(`${num1} === ${num2} : ${num1 === num2}`);  // "10" === 10 : false
         console.log(`${num1} != ${num2} : ${num1 != num2}`);
         console.log(`${num1} !== ${num2} : ${num1 !== num2}`);
+
+        let num3 = 10;
+        num3 += 1;      // num3 = num3 + 1;
+        console.log(`num3의 값은 : ${num3}`);           // 11
+
+        let result = ++num3;
+        console.log(`현재 result의 값은 : ${result}`);  // 12
+        console.log(`현재 num3 값은 : ${num3}`);        // 12
+
+        result = num3++;
+        console.log(`현재 result의 값은 : ${result}`);  // 12
+        console.log(`현재 num3 값은 : ${num3}`);        // 13
+
+        let log1 = true;
+        let log2 = false;
+        console.log(`log1 && log2 : ${log1 && log2}`);
+        console.log(`log1 || log2 : ${log1 || log2}`);
+        console.log(`!log1 : ${!log1}, !log2 : ${!log2}`);
     </script>
 </body>
 </html>
