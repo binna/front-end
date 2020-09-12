@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>if문</title>
+</head>
+<body>
+    <h2>if문</h2>
+    <script>
+        'use strict';
+        let jumsu = Number(prompt('점수를 입력하세요.'));
+        if(jumsu == 100) {
+            console.log('참 잘하셨어요~');
+            console.log('만점입니다.');
+        } else if(jumsu >= 90) {
+            console.log('훌륭합니다~');
+            console.log('90점 이상이네요.')
+        } else if(jumsu >= 60) {
+            console.log('과락을 면했네요.')
+            console.log('겨우 합격입니다~')
+        } else {
+            console.log('점수 미달입니다.');
+        }
+    </script>
+</body>
+</html>
