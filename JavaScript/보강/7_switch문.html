@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>switch 문</title>
+</head>
+<body>
+    <h2>switch문</h2>
+    <script>
+        'use strict';
+        let vars = prompt('당신의 혈액형을 입력하세요');
+
+        switch(vars){
+            case 'A':
+                console.log('A형이시군요.');
+                break;
+            case 'B':
+                console.log('B형이시군요.');
+                break;
+            case 'AB':
+                console.log('AB형이시군요.');
+                break;
+            case 'O':
+                console.log('O형이시군요.');
+                break;
+            default:
+                console.log('잘못입력했습니다.');
+        }
+    </script>
+</body>
+</html>

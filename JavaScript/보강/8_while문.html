@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>while문</title>
+</head>
+<body>
+    <h2>while문</h2>
+    <script>
+        'use strict';
+        let i = 1;
+        let sum = 0;
+
+        while(i <= 10) {
+            //console.log('안녕하세요 JavaScript!');
+            console.log(`현재 i의 값 : ${i}`);
+            sum += i;       // sum = sum + i;
+            i++;
+        }
+        console.log(`1~10까지의 총합 : ${sum}`);
+        console.log(`현재 i의 값 : ${i}`);
+
+        do {
+            console.log('do ~ while문의 실행문입니다.');
+        } while(i < 10);
+    </script>
+</body>
+</html>
