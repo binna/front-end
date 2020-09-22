@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>객체</title>
+</head>
+<body>
+    <h2>객체</h2>
+    <script>
+        'use strict';
+        const dog1 = "뽀미";
+        const dog2 = {
+            name: "루시",
+            family: "포메리안",
+            color: "white",
+            age: 9,
+            weight: 3.5,
+            play: function(){
+                console.log("뛰어놉니다.");
+            }
+        };
+
+        console.log(`dog1 : ${dog1}`);
+        console.log(`dog2 : ${dog2}`);
+
+        // console.dir() : 객체의 모든 프러퍼티를 확인하는 함수
+        //                 하위 개체의 내용을 볼 수 있는 펼침 삼각형이 있는 계층적 목록으로 표시
+        console.dir(dog2); 
+
+        // 프러퍼티의 값을 찍기 위해서는 어떻게 해야하는가?
+        console.log(`dog2.name : ${dog2.name}`);
+        console.log(`dog2.family : ${dog2.family}`);
+        console.log(`dog2.color : ${dog2.color}`);
+        console.log(`dog2.age : ${dog2.age}`);
+        console.log(`dog2.weight : ${dog2.weight}`);
+        console.log(`dog2.play : ${dog2.play}`);
+        dog2.play();
+    </script>
+</body>
+</html>

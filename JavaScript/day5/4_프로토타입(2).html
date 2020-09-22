@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>프로토타입 - 2</title>
+</head>
+<body>
+    <h2>프로토타입 - 2</h2>
+    <script>
+        function Dog(name, color, age){
+            this.name = name;
+            this.color = color;
+            this.age = age;
+            //this.family = '포메리안';
+        }
+        
+        // 이건 3_프로토타입(1) 예제와는 달리
+        // 직접 생성자의 프로퍼티를 추가한 것임!
+        Dog.prototype.family = '포메리안';
+        Dog.prototype.breed = function(){
+            return this.color + ' ' + this.family;
+        }
+        
+        const rucy = new Dog('루시', 'white', 9);
+        const ppomi = new Dog('뽀미', 'brown', 4);
+
+        console.log(rucy);
+        console.log(rucy.name);
+        console.log(rucy.color);
+        console.log(rucy.age);
+        console.log(rucy.family);
+        console.log(rucy.breed());
+
+        console.log(ppomi);
+        console.log(ppomi.name);
+        console.log(ppomi.color);
+        console.log(ppomi.age);
+        console.log(ppomi.family);
+        console.log(ppomi.breed());
+    </script>
+</body>
+</html>

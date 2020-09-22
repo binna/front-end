@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>생성자</title>
+</head>
+<body>
+    <h2>생성자</h2>
+    <script>
+        'use strict';
+        function triangle(b, h) {
+            this.base = b;
+            this.height = h;
+            this.area = function() {
+                return this.base * this.height / 2;
+            }
+        }
+        // 객체 생성
+        const tg1 = new triangle(10, 10);
+        const tg2 = new triangle(20, 5);
+
+        // 객체 값 접근
+        console.log(`tg1.base : ${tg1.base}`);
+        console.log(`tg1.height : ${tg1.height}`);
+        console.log(`tg1.area() : ${tg1.area()}`);
+        console.dir(tg1);
+
+        console.log(`tg2.base : ${tg2.base}`);
+        console.log(`tg2.height : ${tg2.height}`);
+        console.log(`tg2.area() : ${tg2.area()}`);
+        console.dir(tg2);
+    </script>
+</body>
+</html>

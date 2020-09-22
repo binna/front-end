@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>프로토타입 - 1</title>
+</head>
+<body>
+    <h2>프로토타입 - 1</h2>
+    <script>
+        'use strict';
+        function Dog(name, color, age){
+            this.name = name;
+            this.color = color;
+            this.age = age;
+        }
+
+        const rucy = new Dog('루시', 'white', 9);
+
+        // 생성자를 통해서 family와 breed의 프러퍼티는 생성하지 않았다.
+        // 따라서, family는 undefined 출력되고
+        //         breed는 Uncaught TypeError: rucy.breed is not a function 에러 발생
+        console.log(rucy);
+        console.log(rucy.name);
+        console.log(rucy.color);
+        console.log(rucy.age);
+        //console.log(rucy.family);   // undefined
+        //console.log(rucy.breed());  // 에러 : Uncaught TypeError: rucy.breed is not a function
+
+        const ppomi = new Dog('뽀미', 'white', 4);
+
+        // rucy 객체에 family와 breed의 프러퍼티를 추가
+        rucy.family = '포메리안'
+        rucy.breed = function(){
+            return this.color + ' ' + this.family;
+        }
+
+        console.log(rucy);
+        console.log(rucy.name);
+        console.log(rucy.color);
+        console.log(rucy.age);
+        console.log(rucy.family);
+        console.log(rucy.breed());
+
+        console.log(ppomi);
+        console.log(ppomi.name);
+        console.log(ppomi.color);
+        console.log(ppomi.age);
+
+        // 잊지말자!
+        // rucy 객체에 family와 breed의 프러퍼티를 추가했을뿐
+        // Dog 생성자와 무관하고 Dog 생성자를 통해 객체를 생성한 ppomi에도 영향이 없다.
+        //console.log(ppomi.family);  // undefined
+        //console.log(ppomi.breed()); // 에러 : Uncaught TypeError: ppomi.breed is not a function
+    </script>
+</body>
+</html>

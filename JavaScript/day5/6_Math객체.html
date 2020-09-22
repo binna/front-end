@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Math 객체</title>
+</head>
+<body>
+    <h2>Math 객체</h2>
+    <script>
+        'use strict';
+        // Math.min() : 인수로 전달 받은 값 중에서 가장 작은 수를 리턴
+        // Math.max() : 인수로 전달 받은 값 중에서 가장 큰 수를 리턴
+        console.log(Math.min());
+        console.log(Math.min(1, 10, -10, 1000, 0));
+        console.log(Math.min(1, 10, -10, "-1000", 0));
+        console.log(Math.min(1, 10, -10, "문자열", 0));
+        console.log(Math.max());
+
+        // Math.round() : 인수로 전달 받은 값을 소수점 첫번째 자리에서 반올림하여 그 결과를 리턴
+        console.log(Math.round(10.49));
+        console.log(Math.round(10.5));
+        console.log(Math.round(-10.5));
+        console.log(Math.round(-10.51));
+
+        // Math.floor() : 인수로 전달 받은 값과 같거나 작은 수 중에서 가장 큰 정수를 리턴
+        console.log(Math.floor(10.49));
+        console.log(Math.floor(10.5));
+        console.log(Math.floor(-10.5));
+        console.log(Math.floor(-10.51));
+
+        // Math.ceil() : 인수로 전달 받은 값과 같거나 큰 수 중에서 가장 작은 정수를 리턴
+        console.log(Math.ceil(10.49));
+        console.log(Math.ceil(10.5));
+        console.log(Math.ceil(-10.5));
+        console.log(Math.ceil(-10.51));
+
+        // Math.random() : 0보다 크거나 같고 1보다 작은 무작위의 소수를 리턴
+        const rm = Math.random();   // 0 ~ 0.999999999 ...
+        console.log(rm);
+
+        // 문제
+        // 1 ~ 10 랜덤한 자연수 출력하기
+        console.log(parseInt(rm * 10) + 1);     // 내 코드
+        console.log(Math.floor(rm * 10) + 1);   // 강사님 코드
+
+        // 1 ~ 45 랜덤한 로또 번호 만들기
+        let lotto = Math.random();
+        lotto = Math.floor(lotto * 45) + 1
+        console.log(`로또 번호 : ${lotto}`);
+    </script>
+</body>
+</html>

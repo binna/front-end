@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>클래스</title>
+</head>
+<body>
+    <h2>클래스</h2>
+    <script>
+        'use strict';
+        let Dog = class {
+            // 객체를 만들기 위한 필드를 constructor에 만들어 준다.
+            constructor(name, color, age) {
+                this.name = name;
+                this.color = color;
+                this.age = age;
+            }
+            // 메소드는 constructor에 바깥에 만들어 준다.
+            play() {
+                console.log(`${this.name}가 눕습니다.`);
+            }
+        }
+
+        const rucy = new Dog('루시', 'white', 9);
+        console.log(rucy);
+        console.log(rucy.name);
+        console.log(rucy.color);
+        console.log(rucy.age);
+        rucy.play();
+        rucy.name = '똥개';
+        console.log(rucy.name);
+    </script>
+</body>
+</html>
