@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>homework</title>
+</head>
+<body>
+    <h2>숙제</h2>
+    <script>
+        const jumin = prompt('주민등록번호를 입력해주세요.');
+        const mult = [2,3,4,5,6,7,8,9,2,3,4,5];
+        let sum = 0;
+
+        for(let idx in mult) {
+            sum += (jumin[idx] * mult[idx]);
+        }
+
+        if(11-(sum % 11) == jumin[jumin.length-1]) {
+            alert('검증된 주민등록번호입니다.');
+        } else {
+            alert('잘못된 주민등록번호입니다.')
+        }
+    </script>
+</body>
+</html>
