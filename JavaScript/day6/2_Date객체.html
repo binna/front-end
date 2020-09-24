@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Date 객체</title>
+</head>
+<body>
+    <h2>Date 객체</h2>
+    <script>
+        'use strict';
+        // 1) new Date() : 현재 날짜 시간을 저장한 객체가 만들어짐
+        console.log(`new Date()\n${new Date()}`);
+
+        // 2) new Date("날짜 문자열") : 해당 특정 날짜와 시간을 가리키는 객체가 만들어짐
+        console.log(`new Date("2020-09-20")\n${new Date("2020-09-20")}`);
+        console.log(`new Date("2020.09.20")\n${new Date("2020.09.20")}`);
+
+        // 3) new Date(밀리초) : 1970년 1월 1일 0시 ~ 해당 밀리초만큼 지난 날짜 객체가 만들어짐(Timestamp)
+        console.log(`new Date(2000000000000)\n${new Date(2000000000000)}`);
+
+        // 4) new Date(년, 월, 일, 시, 분, 초, 밀리초) : 해당 특정 날짜 시간을 가리키는 객체가 만들어짐
+        // 연도는 2자리로 표현시 1900 ~ 1999, 4자리로 표현해야 2000년대 표현 가능
+        // 월(month)은 0(1월) ~ 11(12월)로 표현
+        console.log(`new Date(2020, 8, 20, 10, 46, 0)\n${new Date(2020, 8, 20, 10, 49, 0)}`);
+        console.log(`new Date(20, 8, 20, 10, 46, 0)\n${new Date(20, 8, 20, 10, 49, 0)}`);
+        
+        console.log('----------------------------------------------------')
+        const date = new Date();
+        console.log(date);
+        console.log(`현재 년도 : ${date.getFullYear()}`);
+        console.log(`현재 월 : ${date.getMonth() + 1}`);
+        console.log(`현재 일 : ${date.getDate()}`);
+    </script>
+</body>
+</html>

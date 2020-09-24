@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>setTimeout 함수</title>
+</head>
+<body>
+    <h2>setTimeout 함수</h2>
+    <script>
+        'use strict';
+        // setTimeout() : 일정 시간이 지난 후 매개변수로 제공된 함수를 실행
+        const st = window.setTimeout(Hi, 2000);
+
+        function Hi(){
+            alert("안녕하세요. JavaScript");
+        }
+        
+        // clearTimeout() :  일정 시간 후 setTimeout()에서 실행된 함수를 중지
+        //clearTimeout(st);
+    </script>
+</body>
+</html>

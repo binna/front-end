@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>String 객체</title>
+</head>
+<body>
+    <h2>String 객체</h2>
+    <script>
+        'use strict';
+        const str1 = '안녕하세요. JavaScript';
+
+        // length : 문자열의 길이
+        // 문자열의 길이는 length 프러퍼티에 저장
+        console.log(`length : ${str1.length}`);
+
+        // indexOf() : 특정 문자나 문자열이 처음으로 등장한 위치를 리턴
+        //             찾지 못했을 경우 -1 리턴
+        console.log('indexOf()---------');
+        console.log(str1.indexOf('j'));
+        console.log(str1.indexOf('a'));
+        console.log(str1.indexOf('Java'));
+
+        // charAt() : 특정 문자열에서 전달 받은 인덱스에 위치한 문자를 리턴
+        console.log('charAt()----------');
+        console.log(str1.charAt(8));
+
+        // includes() : 특정 문자열에서 전달 받은 문자열이 포함되어 있는지 여부를 리턴
+        console.log('includes()--------')
+        console.log(str1.includes('Java'));
+        console.log(str1.includes('java'));
+
+        // substring() : 전달받은 시작 인덱스부터 종료 인덱스 바로 앞까지 문자열을 추출하여 새로운 문자열을 리턴
+        console.log('substring()-------')
+        console.log(str1.substring(7));
+        console.log(str1.substring(7, 11));
+
+        // substr() : 전달받은 시작 인덱스부터 전달받은 개수만큼 문자열을 추출하여 새로운 문자열을 리턴
+        console.log('substr()----------')
+        console.log(str1.substr(7, 4));
+
+        // split() : 구분자를 기준으로 나눈 후 나뉜 문자열을 하나의 배열에 저장
+        console.log('split()-----------');
+        const str2 = "김사과|오렌지|반하나|이메론|박수박|오피치";
+        const student = str2.split("|");
+
+        console.log(`str2 : ${str2}`);
+        console.log('str2.split("|") : ' + student);
+
+        for(let stu of student) {
+            console.log(stu);
+        }
+        student.forEach(function(stu, idx, arr) {
+            console.log(stu, idx, arr[idx]);
+        });
+
+        // replace() : 원본 문자열의 일부를 전달받은 문자열로 치환
+        console.log('replace()---------')
+        console.log(str1.replace('안녕하세요', 'Hello!'));
+
+        // trim() : 문자열의 앞 뒤 공백을 제거
+        console.log('trim()------------');
+        const str3 = "          JavaScript          ";
+        console.log(`|${str3}|`);
+        console.log(`|${str3.trim()}|`);
+
+        // toUpperCase() : 영문자 중 소문자를 모두 대문자로 변환
+        console.log('toUpperCase()-----')
+        console.log(str3.toLowerCase());
+
+        // toLowerCase() : 영문자 중 대문자를 모두 소문자로 변환
+        console.log('toLowerCase()-----');
+        console.log(str3.toUpperCase());
+    </script>
+</body>
+</html>
