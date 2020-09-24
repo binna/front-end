@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>navigator 객체</title>
+</head>
+<body>
+    <h2>navigator 객체</h2>
+    <script>
+        'use strict';
+        navigator.geolocation.getCurrentPosition(success, fail);
+
+        function success(location) {
+            console.log(location.coords.latitude);  // 위도
+            console.log(location.coords.longitude); // 경도
+        }
+        function fail(msg) {
+            console.log(msg.code);
+        }
+    </script>
+</body>
+</html>
