@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>문서 객체 모델 - 1</title>
+</head>
+<body>
+    <h2>문서 객체 모델 - 1</h2>
+    <ul>
+        <li name="model">HTML</li>
+        <li>CSS</li>
+        <li id="js" class="js">JavaScript</li>
+        <li id="js" class="js">jQuery</li>
+        <li class="server">Apache</li>
+        <li class="server">PHP</li>
+        <li class="server">MySQL</li>
+        <li id="js" class="js">Node.js</li>
+        <li id="js" class="js">React.js</li>
+    </ul>
+    <script>
+        'use strict';
+        const tagName = document.getElementsByTagName("li");
+        for(let i=0; i<tagName.length; i++){
+            tagName.item(i).style.color = "gold";
+        }
+
+        const className = document.getElementsByClassName('js');
+        for(let i=0; i<className.length; i++){
+            className.item(i).style.color = "deepskyblue";
+        }
+
+        // id는 한 개만 설정 가능
+        // 만약 id 설정을 여러 개 설정했다면...! 
+        // 에러는 나지 않으나 제일 먼저 검색된 첫 id만 색상 변경이 된다.
+        // 또한 id는 하나만 설정하는 것이기 때문에 리턴값이 배열이 아니다.
+        // 배열이 아니기 때문에 for문으로 돌릴 수 없다.
+        const id = document.getElementById('js');
+        id.style.color = "deeppink";
+
+        const name = document.getElementsByName('model');
+        for(let i=0; i<name.length; i++){
+            name.item(i).style.color = "red";
+        }
+
+        const querySelector = document.querySelectorAll("li.server");
+        for(let i=0; i<querySelector.length; i++){
+            querySelector.item(i).style.color = "blue";
+        }
+    </script>
+</body>
+</html>

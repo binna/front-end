@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>시계 만들기</title>
+</head>
+<body>
+    <h2>시계 만들기</h2>
+    <div id="result"></div>
+    <p><input type="button" value="시작" onclick="startClock()"></p>
+    <p><input type="button" value="중지" onclick="stopClock()"></p>
+    <script>
+        'use strict';
+        function printTime() {
+            const today = new Date();
+            const hh = today.getHours();
+            const mm = today.getMinutes();
+            const ss = today.getSeconds();
+            document.getElementById('result').innerHTML = hh + ":" + mm + ":" + ss;
+        }
+
+        let timeId = null;
+        function startClock() {
+            timeId = setInterval(printTime, 500);
+        }
+        
+        function stopClock() {
+            clearInterval(timeId);
+        }
+    </script>
+</body>
+</html>
