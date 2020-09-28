@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>노드의 교체</title>
+</head>
+<body>
+    <h2>노드의 교체</h2>
+    <div id="parent">
+        <p id="first">김사과</p>
+        <p>오렌지</p>
+        <p>반하나</p>
+    </div>
+    <p id="second">이메론</p>
+    <hr>
+    <p id="text">좋아하는 과일은 사과 입니다.</p>
+
+    <button onclick="changeNode()">요소 노드 교체</button>
+    <button onclick="changeText()">텍스트 노드 교체</button>
+
+    <script>
+        'use strict';
+        function changeNode(){
+            const parent = document.getElementById('parent');
+            const first = document.getElementById('first');
+            const second = document.getElementById('second');
+            parent.replaceChild(second, first);
+        }
+        function changeText(){
+            const text = document.getElementById('text').firstChild;
+            text.replaceData(9, 2, "오렌지");
+        }
+    </script>
+</body>
+</html>

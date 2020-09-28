@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SELECT 다루기</title>
+</head>
+<body>
+    <h2>SELECT 다루기</h2>
+    <select id="testSel">
+        <option value="0">선택하세요.</option>
+    </select>
+    <button onclick="setSelect()">셀렉트 값 설정</button>
+    <script>
+        'use strict';
+        const fruitList = [
+            { oKey: 'apple', oVal: '사과' },
+            { oKey: 'banana', oVal: '바나나' },
+            { oKey: 'orange', oVal: '오렌지' },
+            { oKey: 'peach', oVal: '복숭아' },           
+        ];
+
+        const targetSel = document.getElementById('testSel');
+
+        function setSelect(){
+            // foreach(function(item, index, array)
+            fruitList.forEach(function(list, i){
+                // 앞에는 item이 찍히고 그 다음은 index가 찍힌다.
+                //console.log(list, i);
+                const opt = document.createElement('option');   // <option></option>
+                opt.setAttribute('value', list.oKey);           // <option value='apple'></option>
+                opt.innerText = list.oVal;                      // <option value='apple'>사과</option>
+                targetSel.appendChild(opt);
+            });
+        }
+    </script>
+</body>
+</html>
