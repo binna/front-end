@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>노드의 추가</title>
+</head>
+<body>
+    <h2>노드의 추가</h2>
+    <p id="item1">JavaScript</p>
+    <p id="item2">jQuery</p>
+    <hr>
+    <div id="list">
+        <p id="server">node.js</p>
+        <p>CSS</p>
+        <p>HTML</p>
+    </div>
+    <hr>
+    <p id="text">지금 시간은 오전 11시 30분입니다.</p>
+    <hr>
+    <button onclick="appendNode()">노드 추가1</button>
+    <button onclick="insertNode()">노드 추가2</button>
+    <button onclick="appendText()">텍스트 추가</button>
+    <script>
+        'use strict';
+        function appendNode() {
+            const parent = document.getElementById('list');
+            const newItem = document.getElementById('item1');
+            parent.appendChild(newItem);
+        }
+        function insertNode() {
+            const parent = document.getElementById('list');
+            const serverItem = document.getElementById('server');
+            const newItem = document.getElementById('item2');
+            parent.insertBefore(newItem, serverItem);
+        }
+        function appendText(){
+            const text = document.getElementById('text').firstChild;
+            text.insertData(7, "아주 피곤한 ");
+        }
+    </script>
+</body>
+</html>
