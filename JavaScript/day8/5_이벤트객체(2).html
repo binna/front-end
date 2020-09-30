@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>이벤트 객체 - 2</title>
+</head>
+<body>
+    <h2>이벤트 객체 - 2</h2>
+    <input type="button" id="btn1" value="버튼1">
+    <input type="button" id="btn2" value="버튼2">
+    <input type="button" id="btn3" value="버튼3">
+    <script>
+        'use stirct';
+        const btn1 = document.getElementById('btn1');
+        const btn2 = document.getElementById('btn2');
+        const btn3 = document.getElementById('btn3');
+
+        btn1.addEventListener('click', clickBtn);
+        btn2.addEventListener('click', clickBtn);
+        //btn3.addEventListener('click', clickBtn);
+        //btn3.addEventListener('click', function() {
+        //    console.log('버튼 3가 눌렸어요.');
+        //});
+        //btn3.addEventListener('click', () => {
+        //    console.log('버튼 3가 눌렸어요.');
+        //});
+        btn3.addEventListener('click', (event) => {
+            console.log(`${event.target.id}가 눌렸어요.`);
+        });
+
+        function clickBtn(e) {
+            switch(e.target.id) {
+                case "btn1":
+                    console.log('버튼 1이 눌렸어요!');
+                    break;
+                case "btn2":
+                    console.log('버튼 2가 눌렸어요!')
+                    break;
+                case "btn3":
+                    console.log('버튼 3가 눌렸어요!')
+                    break;
+            }
+        }
+    </script>
+</body>
+</html>

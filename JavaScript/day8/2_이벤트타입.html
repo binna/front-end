@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>이벤트 타입</title>
+    <script>
+        window.onload = function() {
+            const text = document.getElementById('text');
+            text.innerHTML = "<i>HTML 문서가 모두 로드되었습니다.</i>";
+        }
+    </script>
+</head>
+<body>
+    <h2>이벤트 타입</h2>
+    <p id="text"></p>
+    <p onclick="changeText(this)">문자열을 클릭하세요.</p>
+    <script>
+        'use strict';
+        function changeText(el) {
+            el.innerHTML = "<b>문자열의 내용이 변경되었어요.</b>";
+        }
+    </script>
+</body>
+</html>
