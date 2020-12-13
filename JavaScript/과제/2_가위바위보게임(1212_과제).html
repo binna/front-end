@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>주사위 게임</title>
+</head>
+<body>
+    <h2>주사위 게임</h2>
+    <script>
+        const user = prompt('가위 바위 보 중 하나를 선택하세요.');
+
+        // 컴퓨터의 값이 0 가위, 1 바위, 2 보
+        const com = Math.floor(Math.random() * 3);
+        console.log(com);
+        
+        // 배열 [이기는 값, 지는 값 무승부 값]
+        let resultDate = {
+            "가위" : ["비겼습니다.", "축하합니다~ 짝짝짝!<br>이겼습니다", "졌습니다."]
+            , "바위" : ["아쉽습니다 ㅜㅜ<br>졌습니다.", "비겼습니다.", "축하합니다~ 짝짝짝!<br>이겼습니다"]
+            , "보" : ["축하합니다~ 짝짝짝!<br>이겼습니다", "아쉽습니다 ㅜㅜ<br>졌습니다.", "비겼습니다."]
+        };
+
+        //console.log(resultDate.가위);
+        //console.log(resultDate.가위[0]);
+
+        switch(user) {
+            case "가위":
+                document.write(resultDate.가위[com]);
+                break;
+            case "바위":
+                document.write(resultDate.바위[com]);
+                break;
+            case "보":
+                document.write(resultDate.보[com]);
+                break;
+            default:
+                document.write("<p>입력을 잘못했습니다.<br>가위, 바위, 보로 입력하세요.</p>");
+        }
+    </script>
+</body>
+</html>
