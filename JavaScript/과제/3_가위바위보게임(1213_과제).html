@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>주사위 게임</title>
+</head>
+<body>
+    <h2>주사위 게임</h2>
+    <script>
+        let user = prompt('가위 바위 보 중 하나를 선택하세요.');
+
+        // 컴퓨터의 값이 0 가위, 1 바위, 2 보
+        const com = Math.floor(Math.random() * 3);
+        console.log(com);
+
+        // 시도 저장
+        let tryGame = 0;
+
+        // 결과 저장
+        let result = "";
+        
+        // 배열
+        let resultDate = {
+            //user :     가위          바위        보
+            "가위" : ["비겼습니다.", "졌습니다.", "이김"]
+            , "바위" : ["이김", "비겼습니다.", "졌습니다."]
+            , "보" : ["졌습니다.", "이김", "비겼습니다."]
+        };
+
+        while(true) {
+            result = "";    // 매 시도마다 초기화 필요
+
+            switch(user) {
+            case "가위":
+                result = resultDate.가위[com];
+                break;
+            case "바위":
+                result = resultDate.바위[com];
+                break;
+            case "보":
+                result = resultDate.보[com];
+                break;
+            default:
+                result = "잘못된 값을 입력하셨습니다."
+            }
+
+            if(result == "이김") {
+                document.write(`<p><b>짝짝짝 축하드립니다!!</b><br>${tryGame}번의 시도 끝에 게임에서 이겼습니다.</p>`);
+                break;
+            } else {
+                tryGame++;
+            }
+
+            // 여기서 다시 받아야 이기지 못할때 다시 값을 받을 수 있음
+            user = prompt(`게임에서 ${result}.\n\n이길때까지 게임이 진행됩니다.\n가위 바위 보 중 하나를 선택하세요.`);
+        }
+    </script>
+</body>
+</html>
