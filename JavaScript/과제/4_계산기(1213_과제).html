@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>계산기</title>
+</head>
+<body>
+    <h2>계산기</h2>
+    <script>
+        'use strict';
+        let rightanswerCnt = 0;
+        
+        while (true) {
+            //                  첫번째 피연산자                     두번째 피연산자                     연산자
+            const randomNum = [Math.floor(Math.random() * 10) + 1, Math.floor(Math.random() * 10) + 1, Math.floor(Math.random() * 4)]
+            let result =[];
+
+            // 정답 10번일 때 무한 루프 탈출
+            if(rightanswerCnt == 10) {
+                alert('10번 맞추셔서 게임이 종료됩니다.')
+                break;
+            }
+
+            switch(randomNum[2]) {
+                case 0:
+                    result = [randomNum[0] + randomNum[1], "+"]
+                    break;
+                case 1:
+                    result = [randomNum[0] - randomNum[1], "-"]
+                    break;
+                case 2:
+                    result = [randomNum[0] * randomNum[1], "*"]
+                    break;
+                case 3:
+                    result = [Math.floor(randomNum[0] / randomNum[1]), "/"]
+                    break;
+            }
+            
+            console.log(randomNum[0] + " " + result[1] + " " + randomNum[1] + " = " + " " + result[0] + "(" + randomNum[2] + ")")
+            const user = prompt(`${randomNum[0]} ${result[1]} ${randomNum[1]}의 값을 맞추어 보세요.\n나누기 같은 경우는 정수 부분만 기재해주세요.\n\n10번 맞추면 게임이 종료됩니다(현재 스코어 : ${rightanswerCnt})`);
+
+            if(result[0] == Number(user)) {
+                rightanswerCnt++;
+                alert('정답입니다.');
+            } else {
+                alert('틀렸습니다.');
+            }
+        }
+    </script>
+</body>
+</html>
