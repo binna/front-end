@@ -19,8 +19,8 @@ USE frontenddb;
 
 -- 회원테이블 만들기
 CREATE TABLE tb_member (
-	mem_id bigint auto_increment primary key,
-	mem_userid varchar(20) unique not null,
+    mem_idx bigint auto_increment primary key,
+    mem_userid varchar(20) unique not null,
     mem_userpw varchar(20) not null,
     mem_name varchar(20) not null,
     mem_hp varchar(13) not null,
@@ -44,8 +44,8 @@ DESC tb_member;
 DROP TABLE tb_member;
 DESC tb_member;
 CREATE TABLE tb_member (
-	mem_id bigint auto_increment primary key,
-	mem_userid varchar(20) unique not null,
+    mem_idx bigint auto_increment primary key,
+    mem_userid varchar(20) unique not null,
     mem_userpw varchar(20) not null,
     mem_name varchar(20) not null,
     mem_hp varchar(13) not null,
@@ -145,15 +145,12 @@ SELECT * FROM tb_member;
 -- 데이터 삭제(DELETE)
 -- 1. DELETE FROM 테이블명;
 -- 2. DELETE FROM 테이블명 WHERE 조건절;
-DELETE FROM tb_member WHERE mem_id = 10;
-SELECT * FROM tb_member;
-
-ALTER TABLE tb_member CHANGE mem_id mem_idx bigint;
+DELETE FROM tb_member WHERE mem_idx = 10;
 SELECT * FROM tb_member;
 
 -- 추가 테이블
 CREATE TABLE tb_profile (
-	pro_memidx bigint,
+    pro_memidx bigint,
     pro_age int,
     pro_gender enum('남자', '여자'),
     pro_height double,
