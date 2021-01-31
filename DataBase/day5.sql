@@ -51,4 +51,20 @@ INSERT INTO tb_profile VALUES (5, 22, '여자', 150, 50, '2000-01-30');
 INSERT INTO tb_profile VALUES (7, 30, '남자', 180, 80, '2000-01-30');
 SELECT * FROM tb_profile;
 
--- 조인 
+-- 조인
+SELECT * FROM tb_member;
+SELECT * FROM tb_profile;
+-- 조인(INNER JOIN)
+SELECT mem_idx, mem_userid, mem_userpw, pro_height, pro_weight
+FROM tb_member INNER JOIN tb_profile
+ON tb_member.mem_idx = tb_profile.pro_memidx;
+-- 조인(LEFT JOIN)
+SELECT mem_idx, mem_userid, mem_userpw, pro_height, pro_weight
+FROM tb_member LEFT JOIN tb_profile
+ON tb_member.mem_idx = tb_profile.pro_memidx;
+-- 조인(RIGHT JOIN)
+SELECT mem_idx, mem_userid, mem_userpw, pro_height, pro_weight
+FROM tb_member RIGHT JOIN tb_profile
+ON tb_member.mem_idx = tb_profile.pro_memidx;
+
+SELECT * FROM tb_member;
