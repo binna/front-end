@@ -8,7 +8,7 @@
     if(!$conn) {
         echo "DB 연결 실패!";
     } else {
-        $sql = "SELECT mem_idx, mem_userid, mem_userpw FROM tb_member 
+        $sql = "SELECT mem_idx, mem_userid, mem_name FROM tb_member 
                     WHERE mem_userid='$userid' and mem_userpw='$userpw'";
         $result = mysqli_query($conn, $sql);
         $row = mysqli_fetch_array($result);
