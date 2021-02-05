@@ -34,7 +34,8 @@
         <p><label>주소 : <input type="text" name="address1" id="sample6_address"></label></p>
         <p><label>상세주소 : <input type="text" name="address2" id="sample6_detailAddress"></label></p>
         <p><label>참고항목 : <input type="text" name="address3" id="sample6_extraAddress"></label></p>
-        <p><input type="submit" value="가입완료"> <input type="reset" value="다시작성"></p>
+        <p><input type="submit" value="가입완료"> <input type="reset" value="다시작성"> 
+           <input type="button" value="로그인" onclick="location.href='./3_login.php'"></p>
     </form>
 </body>
 </html>
