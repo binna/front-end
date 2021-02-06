@@ -11,7 +11,7 @@
         $uploads_dir = './upload';
         $allowed_ext = array('jpg', 'jpeg', 'png', 'gif', 'bmp');
         $error = $_FILES['b_file']['error'];
-        $name = $_FILES['b_file']['name'];      // apple.jpg 
+        $name = $_FILES['b_file']['name'];      // apple.jpg
         $ext = explode(".", $name);             // ext[0] = "apple", ext[1] = "jpg"
         $rename = $ext[0].time();
         $rename = $rename.".".$ext[1];
