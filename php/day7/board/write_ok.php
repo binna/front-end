@@ -1,6 +1,7 @@
 <?php
     session_start();
     include "../include/dbconn.php";
+    include "../include/sessionCheck.php";
 
     $id = $_SESSION['id'];
     $b_title = $_POST['b_title'];
