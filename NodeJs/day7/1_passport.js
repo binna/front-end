@@ -45,6 +45,9 @@ const database = require('./database/database');
 const configPassport = require('./config/passport');
 configPassport(app, passport);
 
+const userPassport = require('./routes/route_member');
+userPassport(router, passport);
+
 app.listen(config.server_port, () => {
     console.log(`${config.server_port} 포트로 서버 실행 중...`);
     database.init(app, config);
