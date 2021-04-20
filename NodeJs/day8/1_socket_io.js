@@ -3,12 +3,13 @@ const bodyParser = require('body-parser');
 const logger = require('morgan');
 const cookieParser = require('cookie-parser');
 const expressSession = require('express-session');
-
-const passport = require('passport');                           // npm i passport
-
+const passport = require('passport');
 const static = require('serve-static');
 const path = require('path');
-const expressErrorHandler = require('express-error-handler');   // npm i express-error-handler
+const expressErrorHandler = require('express-error-handler');
+const socketio = require('socket.io');      // npm i socket.io
+const cors = require('cors');               // npm i cors
+
 const app = express();
 const router = express.Router();
 
@@ -20,8 +21,7 @@ app.use(expressSession({
     cookie: { maxAge: 60 * 60 * 1000 }
 }));
 app.use(logger('dev'));
-// passport의 세션을 사용하려면 그 전에 express의 세션을 사용하는 코드가 먼저 나와야 한다.
-app.use(passport.initialize());        // passport 초기화
+app.use(passport.initialize());
 app.use(passport.session());
 app.use(bodyParser.urlencoded({extended: false}));
 app.use('/public', static(path.join(__dirname, "public")));
@@ -48,7 +48,28 @@ configPassport(app, passport);
 const userPassport = require('./routes/route_member');
 userPassport(router, passport);
 
-app.listen(config.server_port, () => {
-    console.log(`${config.server_port} 포트로 서버 실행 중...`);
+const server = app.listen(config.server_port, () => {
+    console.log(`${config.server_port} 포트로 웹 서버 실행중...`);
     database.init(app, config);
+});
+
+const io = socketio(server);
+console.log('socket.io 서버 준비 완료!');
+
+io.sockets.on('connection', (socket) => {
+    console.dir(`connection : ${socket.request.connection._peername}`);
+    socket.remoteAddress = socket.request.connection._peername.address;
+    socket.remotePort = socket.request.connection._peername.port;
+    console.dir(`socket.remoteAddress : ${socket.remoteAddress}`);
+    console.dir(`socket.remotePort : ${socket.remotePort}`);
+
+    socket.on('message', function(message) {
+        console.log('message 이벤트를 받았습니다.');
+        console.dir(message);
+
+        if(message.recepient == 'all') {
+            console.log('모든 클라이언트에게 메시지를 보냅니다.');
+            io.sockets.emit('message', message);
+        }
+    });
 });
