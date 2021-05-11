@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>클라이언트 2</title>
+    <title>클라이언트 3</title>
     <script src="https://cdn.socket.io/3.1.3/socket.io.min.js" 
             integrity="sha384-cPwlPLvBTa3sKAgddT6krw0cJat7egBga3DJepJyrLl4Q9/5WLra3rrnMcyTyOnh" crossorigin="anonymous"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" 
@@ -36,6 +36,20 @@
                 }
                 socket.emit('message', output);
             });
+
+            $('#loginButton').on('click', function(event) {
+                const id = $('#userid').val();
+                const password = $('#userpw').val();
+
+                const output = {id:id, password:password}
+                console.log(`서버로 보낼 데이터 : ${JSON.stringify(output)}`);
+
+                if(socket == undefined) {
+                    alert('서버에 연결하지 못했습니다. 서버 연결을 먼저 시도하세요.');
+                    return;
+                }
+                socket.emit('login', output);
+            });
         });
 
         function connectToServer() {
@@ -61,12 +75,16 @@
     </script>
 </head>
 <body>
-    <!-- http://localhost:3000/public/client2.html -->
-    <h2>클라이언트 2</h2>
+    <!-- http://localhost:3000/public/client3.html -->
+    <h2>클라이언트 3</h2>
     <hr/>
     <p>접속 ip : <input type="text" id="hostInput" value="localhost"></p>
     <p>접속 port : <input type="text" id="portInput" value="3000"></p>
     <p><input type="button" id="connectButton" value="서버접속"></p>
+    <hr/>
+    <p>아이디 : <input type="text" id="userid"></p>
+    <p>비밀번호 : <input type="password" id="userpw"></p>
+    <p><input type="button" id="loginButton" value="로그인"> <input type="button" id="logoutButton" value="로그아웃"></p>
     <hr/>
     <p>보내는 사람 아이디 : <input type="text" id="sender" value="apple"></p>
     <p>받는 사람 아이디 : <input type="text" id="rev" value="all"></p>
