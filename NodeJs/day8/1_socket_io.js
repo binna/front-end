@@ -53,6 +53,8 @@ const server = app.listen(config.server_port, () => {
     database.init(app, config);
 });
 
+login_ids = {};
+
 const io = socketio(server);
 console.log('socket.io 서버 준비 완료!');
 
@@ -62,6 +64,17 @@ io.sockets.on('connection', (socket) => {
     socket.remotePort = socket.request.connection._peername.port;
     console.dir(`socket.remoteAddress : ${socket.remoteAddress}`);
     console.dir(`socket.remotePort : ${socket.remotePort}`);
+
+    socket.on('login', function(login) {
+        console.log('login 이벤트를 받았습니다.');
+        console.dir(login);
+        console.log(`접속한 소켓의 id : ${socket.id}`);
+        login_ids[login.id] = socket.id;
+        socket.login_id = login.id;
+
+        console.log(`접속한 클라이언트 id의 개수 : ${Object.keys(login_ids).length}`);
+        sendresponse(socket, 'login', '200', '로그인되었습니다.');
+    });
 
     socket.on('message', function(message) {
         console.log('message 이벤트를 받았습니다.');
@@ -73,3 +86,8 @@ io.sockets.on('connection', (socket) => {
         }
     });
 });
+
+function sendresponse(socket, command, code, message) {
+    const statusObj = {command:command, code:code, message:message};
+    socket.emit('response', statusObj);
+}
