@@ -11,4 +11,4 @@
 <br><hr><br>
 
 # 해당 수업 내용은 블로그에 정리하였다.
-[수업내용 정리한 블로그로 이동하기] (https://shine94.tistory.com/category/%5B%EC%A0%95%EA%B7%9C%5D%ED%94%84%EB%A1%A0%ED%8A%B8%EC%97%94%EB%93%9C)
+[수업내용 정리한 블로그로 이동하기](https://shine94.tistory.com/category/%5B%EC%A0%95%EA%B7%9C%5D%ED%94%84%EB%A1%A0%ED%8A%B8%EC%97%94%EB%93%9C)
